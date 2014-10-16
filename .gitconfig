@@ -1,0 +1,26 @@
+[user]
+	name = par.dahlman
+	email = par.dahlman@valtech.se
+[color]
+	ui = true
+[diff]
+	tool = bc3
+[difftool "bc3"]
+	path="c:/program files (x86)/beyond compare 3/bcomp.exe"
+[core]
+	autocrlf = true
+[alias]
+	rb = rebase
+	qa = "!f() { git log --grep $1 --pretty=format:'%h' | xargs -i{} git diff-tree -r --name-status --no-commit-id {} | sort | uniq; }; f"
+	today = "!f() { git log --author='par.dahlman' --since='5am' --pretty=format:'%s'; }; f"
+	files = "!f() { git diff --name-status $1^ $1; }; f"
+	st = status -s -b
+	lps = log -10 --format='%C(auto)%h %C(green)%an%Creset %x09  %s %C(yellow)(%cr)%Creset'
+[mergetool "bc3"]
+	path="c:/program files (x86)/beyond compare 3/bcomp.exe"
+[merge]
+	tool = bc3
+[mergetool]
+	bc3 = trustExitCode
+[push]
+	default = current
